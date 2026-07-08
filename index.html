@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Continue</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    text-align:center;
+    margin-top:80px;
+    background:#f5f5f5;
+}
+.container{
+    max-width:500px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+button{
+    padding:15px 25px;
+    font-size:18px;
+    margin:10px;
+    cursor:pointer;
+}
+#continue{
+    opacity:.5;
+    cursor:not-allowed;
+}
+</style>
+
+<script>
+let time = 5;
+
+function startCountdown(){
+    let timer = setInterval(function(){
+
+        document.getElementById("timer").innerHTML = time;
+
+        if(time==0){
+            clearInterval(timer);
+            let btn=document.getElementById("continue");
+            btn.disabled=false;
+            btn.style.opacity=1;
+            btn.style.cursor="pointer";
+            document.getElementById("timerText").innerHTML="You can continue now!";
+        }
+
+        time--;
+
+    },1000);
+}
+window.onload=startCountdown;
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Before Continuing</h2>
+
+<p>Please visit our Shopee store first.</p>
+
+<a href="https://s.shopee.com.my/3g1uwKE1H3" target="_blank">
+<button>🛒 Visit Shopee</button>
+</a>
+
+<p id="timerText">
+Continue button unlocks in <span id="timer">5</span> seconds.
+</p>
+
+<button
+id="continue"
+disabled
+onclick="window.location.href='https://workink.net/23Ow/lv42d0vv';">
+➡ Continue to Content
+</button>
+
+</div>
+
+</body>
+</html>
